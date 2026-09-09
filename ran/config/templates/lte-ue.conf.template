@@ -1,0 +1,35 @@
+[rf]
+tx_gain = 50
+rx_gain = 40
+device_name = zmq
+device_args = tx_port=tcp://*:__LTE_ZMQ_UE_TX_PORT__,rx_port=tcp://localhost:__LTE_ZMQ_ENB_TX_PORT__,id=ue,base_srate=11.52e6
+
+[rat.eutra]
+dl_earfcn = 3350
+
+[rat.nr]
+nof_carriers = 0
+
+[usim]
+mode = soft
+algo = milenage
+opc = __HOME_OPC__
+k = __HOME_K__
+imsi = __HOME_IMSI__
+imei = 353490069873319
+
+[nas]
+apn = __DNN__
+apn_protocol = ipv4
+
+[gw]
+netns = ue1
+ip_devname = tun_srsue
+ip_netmask = 255.255.255.0
+
+[log]
+all_level = info
+filename = /var/log/srsue-home-lte.log
+
+[gui]
+enable = false

@@ -1,0 +1,19 @@
+db_uri: mongodb://127.0.0.1:27017/open5gs
+logger:
+  file:
+    path: /var/log/open5gs/pcf.log
+global:
+  max:
+    ue: 1024
+pcf:
+  sbi:
+    server:
+      - address: 127.0.0.13
+        port: 7777
+    client:
+      scp:
+        - uri: http://127.0.0.200:7777
+  metrics:
+    server:
+      - address: 127.0.0.13
+        port: 9090

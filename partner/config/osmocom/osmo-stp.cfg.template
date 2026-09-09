@@ -1,0 +1,22 @@
+!
+line vty
+ no login
+!
+cs7 instance 0
+ point-code __PARTNER_PC_DOTTED__
+ xua rkm routing-key-allocation dynamic-permitted
+
+ sccp-address partner-hlr
+  routing-indicator PC
+  point-code __PARTNER_PC_DOTTED__
+  subsystem-number __SS7_HLR_SSN__
+
+ sccp-address home-hlr
+  routing-indicator PC
+  point-code __HOME_PC_DOTTED__
+  subsystem-number __SS7_HLR_SSN__
+
+ listen m3ua __SS7_PORT__
+  accept-asp-connections dynamic-permitted
+  local-ip __PARTNER_IP__
+!

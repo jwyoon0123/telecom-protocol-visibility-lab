@@ -1,0 +1,25 @@
+logger:
+  file:
+    path: /var/log/open5gs/sepp-lab.log
+sepp:
+  sbi:
+    server:
+      - address: 127.0.0.250
+        port: 7777
+    client:
+      scp:
+        - uri: http://127.0.0.200:7777
+  n32:
+    server:
+      - sender: partner-sepp.lab.invalid
+        address: __PARTNER_IP__
+        port: __N32_PORT__
+        n32f:
+          address: __PARTNER_IP__
+          port: __N32F_PORT__
+    client:
+      sepp:
+        - receiver: home-sepp.lab.invalid
+          uri: http://__HOME_IP__:__N32_PORT__
+          n32f:
+            uri: http://__HOME_IP__:__N32F_PORT__

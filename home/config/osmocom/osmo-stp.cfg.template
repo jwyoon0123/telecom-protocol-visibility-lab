@@ -1,0 +1,27 @@
+!
+line vty
+ no login
+!
+cs7 instance 0
+ point-code __HOME_PC_DOTTED__
+
+ asp home-partner __SS7_PORT__ 0 m3ua
+  remote-ip __PARTNER_IP__
+  local-ip __HOME_IP__
+  role asp
+  sctp-role client
+  no shutdown
+
+ as partner-as m3ua
+  asp home-partner
+
+ sccp-address home-hlr
+  routing-indicator PC
+  point-code __HOME_PC_DOTTED__
+  subsystem-number __SS7_HLR_SSN__
+
+ sccp-address partner-hlr
+  routing-indicator PC
+  point-code __PARTNER_PC_DOTTED__
+  subsystem-number __SS7_HLR_SSN__
+!

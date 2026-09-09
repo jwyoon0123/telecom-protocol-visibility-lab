@@ -1,0 +1,16 @@
+Identity = "pcrf.home.lab.invalid";
+Realm = "home.lab.invalid";
+ListenOn = "127.0.0.9";
+TLS_Cred = "/etc/open5gs/tls/pcrf.crt", "/etc/open5gs/tls/pcrf.key";
+TLS_CA = "/etc/open5gs/tls/ca.crt";
+
+NoRelay;
+LoadExtension = "/usr/local/lib/x86_64-linux-gnu/freeDiameter/dbg_msg_dumps.fdx" : "0x8888";
+LoadExtension = "/usr/local/lib/x86_64-linux-gnu/freeDiameter/dict_rfc5777.fdx";
+LoadExtension = "/usr/local/lib/x86_64-linux-gnu/freeDiameter/dict_mip6i.fdx";
+LoadExtension = "/usr/local/lib/x86_64-linux-gnu/freeDiameter/dict_nasreq.fdx";
+LoadExtension = "/usr/local/lib/x86_64-linux-gnu/freeDiameter/dict_nas_mipv6.fdx";
+LoadExtension = "/usr/local/lib/x86_64-linux-gnu/freeDiameter/dict_dcca.fdx";
+LoadExtension = "/usr/local/lib/x86_64-linux-gnu/freeDiameter/dict_dcca_3gpp.fdx";
+
+ConnectPeer = "smf.home.lab.invalid" { ConnectTo = "127.0.0.4"; No_TLS; };

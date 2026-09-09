@@ -1,0 +1,44 @@
+# Local configuration / secrets
+config/lab.env
+config/secrets.env
+config/versions.env
+.env
+*.env.local
+
+# Generated runtime configs
+build/
+ran/config/generated/
+
+# Captures, logs, backups
+*.pcap
+*.pcapng
+*.log
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+backup/
+backups/
+logs/
+pcap/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+
+# Keys and certificates
+*.key
+*.pem
+*.p12
+*.pfx
+*.crt
+*.csr
+
+# Optional local publication deny-list/settings
+config/publication-denylist.local

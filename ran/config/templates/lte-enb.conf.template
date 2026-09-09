@@ -1,0 +1,33 @@
+[enb]
+enb_id = 0x19B
+mcc = __HOME_MCC__
+mnc = __HOME_MNC__
+mme_addr = __HOME_IP__
+gtp_bind_addr = __RAN_IP__
+s1c_bind_addr = __RAN_IP__
+s1c_bind_port = 0
+n_prb = 50
+
+[enb_files]
+sib_config = sib.conf
+rr_config = rr.conf
+rb_config = rb.conf
+
+[rf]
+tx_gain = 80
+rx_gain = 40
+device_name = zmq
+device_args = fail_on_disconnect=true,tx_port=tcp://*:__LTE_ZMQ_ENB_TX_PORT__,rx_port=tcp://localhost:__LTE_ZMQ_UE_TX_PORT__,id=enb,base_srate=11.52e6
+
+[pcap]
+s1ap_enable = true
+s1ap_filename = /opt/telecom-lab/pcap/home-s1ap.pcap
+
+[log]
+all_level = info
+all_hex_limit = 32
+filename = /var/log/srsenb-home.log
+file_max_size = -1
+
+[gui]
+enable = false

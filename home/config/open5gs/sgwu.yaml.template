@@ -1,0 +1,14 @@
+logger:
+  file:
+    path: /var/log/open5gs/sgwu.log
+global:
+  max:
+    ue: 1024
+sgwu:
+  pfcp:
+    server:
+      - address: 127.0.0.6
+    client: null
+  gtpu:
+    server:
+      - address: __HOME_IP__

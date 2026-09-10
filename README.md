@@ -2,7 +2,7 @@
 
 **Home Core + Partner Core + software RAN/UE**로 SS7, LTE, 5G, GTP-U, N32 transport, Diameter visibility를 재현하는 폐쇄형 실습 환경입니다.
 
-이 저장소는 특정 회사나 상용 보안제품에 종속되지 않는 **pre-product integration baseline**입니다. 공중 통신망, 실제 가입자 또는 허가되지 않은 네트워크에 사용하지 않습니다.
+이 저장소는 특정 회사나 상용 보안제품에 종속되지 않는 **pre-product integration baseline**입니다. 공중 통신망, 실제 가입자 또는 허가되지 않은 네트워크 연결을 포함하지 않습니다.
 
 ## Reference topology
 
@@ -76,7 +76,7 @@ sudo ./tools/deploy.sh partner --apply
 sudo ./tools/deploy.sh ran --apply
 ```
 
-서비스 restart는 의도적으로 수동입니다. 자세한 절차는 [Installation](docs/INSTALLATION.md), [Operations](docs/OPERATIONS.md), [Configuration Reference](docs/CONFIGURATION_REFERENCE.md)를 참고하십시오.
+서비스 restart는 의도적으로 수동입니다. 자세한 절차는 [Installation](docs/INSTALLATION.md), [Operations](docs/OPERATIONS.md), [Configuration Reference](docs/CONFIGURATION_REFERENCE.md)를 참조하세요.
 
 ## Canonical entry points
 
@@ -106,7 +106,7 @@ docs/         architecture, installation, operation, validation, limitations
 make check
 ```
 
-`make check`는 shell/Python syntax, 공개정보/secret scan, template render/YAML validation, synthetic Diameter loopback self-test를 수행합니다. 실제 LTE/5G/SS7 E2E 판정은 live node에서 별도로 수행합니다.
+`make check`는 shell/Python syntax, 공개정보/secret scan, template render/YAML validation, synthetic Diameter loopback self-test를 수행합니다. 실제 LTE/5G/SS7 E2E 판정은 live node에서만 가능합니다.
 
 ## Public release
 
@@ -115,6 +115,6 @@ make check
 make package
 ```
 
-`tools/public-safety-scan.sh`는 secret/private-key/내부 hostname 패턴을 검사합니다. 조직 고유 명칭이나 내부 도메인은 `VMTL_DENY_REGEX`로 추가 검사할 수 있습니다. 공개 전에는 [Publication Checklist](docs/PUBLICATION_CHECKLIST.md)를 수동으로도 확인하십시오.
+`tools/public-safety-scan.sh`는 secret/private-key/내부 hostname 패턴을 검사합니다. 조직 고유 명칭이나 내부 도메인은 `VMTL_DENY_REGEX`로 추가 검사할 수 있습니다.
 
-> Repository 라이선스는 자동으로 선택하지 않았습니다. 공개 전 [Licensing Decision](docs/LICENSING.md)을 확인하십시오. 기술 baseline과 공개용 정리 상태는 [Tested Baseline](docs/TESTED_BASELINE.md) 및 [Publication Checklist](docs/PUBLICATION_CHECKLIST.md)에 정리되어 있습니다.
+> Repository 라이선스는 자동으로 선택하지 않았습니다. 공개 전 [Licensing Decision](docs/LICENSING.md)을 확인하십시오. 기술 baseline과 공개용 정리 상태는 [Tested Baseline](docs/TESTED_BASELINE.md)을 참조하세요.
